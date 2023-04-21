@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudspikeapp
+spec:
+  selector:
+    matchLabels:
+      templatename: cloudspikeapptemplate
+  template:
+    metadata:
+      labels:
+        templatename: cloudspikeapptemplate
+    spec:
+      containers:
+        - image: mariuszwie/test:0.1
+          name: tdo-btp-hello-world 
