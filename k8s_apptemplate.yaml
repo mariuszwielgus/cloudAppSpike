@@ -19,3 +19,19 @@ spec:
             - name: http
               containerPort: 4000
               protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudspikeappservice
+  labels:
+        templatename: cloudspikeapptemplate
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 4000
+      targetPort: 4000
+      protocol: TCP
+      name: tdo-service
+  selector:
+    app: cloudspikeapp  
