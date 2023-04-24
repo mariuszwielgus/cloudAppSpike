@@ -14,3 +14,7 @@ spec:
       containers:
         - image: mariuszwie/test:0.1
           name: tdo-btp-hello-world 
+          ports:
+            - name: http
+              containerPort: 4000
+              protocol: TCP
